@@ -8,19 +8,18 @@
     <script src="init.js"></script>
 </head>
 <body>
-
-<cre8-input-wrapper>
-    <label>Label:</label>
-    <input type="text" ng-model="user.name" />
-</cre8-input-wrapper>
-
-<br/><br/>
-
-<cre8-input-wrapper>
-    <label>Label:</label>
-    <textarea ng-model="user.info"></textarea>
-</cre8-input-wrapper>
-
+<div class="flex-wrapper">
+    <cre8-input-wrapper>
+        <label>Label:</label>
+        <input type="text" ng-model="user.name" />
+    </cre8-input-wrapper>
+</div>
+<div class="flex-wrapper">
+    <cre8-input-wrapper>
+        <label>Label:</label>
+        <textarea ng-model="user.info"></textarea>
+    </cre8-input-wrapper>
+</div>
 
 </body>
 </html>
