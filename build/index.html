@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular UI Elements</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="angular-ui-elements.js"></script>
+    <script src="init.js"></script>
+</head>
+<body>
+
+<cre8-input-wrapper>
+    <label>Label:</label>
+    <input type="text" ng-model="user.name" />
+</cre8-input-wrapper>
+
+<br/><br/>
+
+<cre8-input-wrapper>
+    <label>Label:</label>
+    <textarea ng-model="user.info"></textarea>
+</cre8-input-wrapper>
+
+
+</body>
+</html>

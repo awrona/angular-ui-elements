@@ -1,0 +1,35 @@
+{
+  "name": "angular-ui-elements",
+  "version": "0.1.0",
+  "description": "Angular UI Elements",
+  "main": "dist/angular-ui-elements.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build/",
+    "deploy": "NODE_ENV=production webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awrona/angular-ui-elements.git"
+  },
+  "keywords": [
+    "Angular",
+    "AngularJS",
+    "UI"
+  ],
+  "author": "Agnieszka Wrona @agawrona",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awrona/angular-ui-elements/issues"
+  },
+  "homepage": "https://github.com/awrona/angular-ui-elements",
+  "devDependencies": {
+    "css-loader": "^0.9.1",
+    "file-loader": "^0.8.1",
+    "sass-loader": "^0.5.0",
+    "style-loader": "^0.8.3",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.7.3",
+    "webpack-dev-server": "^1.7.0"
+  }
+}

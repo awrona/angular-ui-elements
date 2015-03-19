@@ -1,0 +1,31 @@
+{
+  "name": "angular-ui-elements",
+  "version": "0.1.0",
+  "homepage": "https://github.com/awrona/angular-ui-elements",
+  "authors": [
+    "Agnieszka Wrona @agawrona"
+  ],
+  "description": "Angular UI Elements",
+  "main": "dist/angular-ui-elements.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "Angular",
+    "AngularJS",
+    "UI"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.3.14"
+  }
+}
