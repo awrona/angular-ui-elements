@@ -1,7 +1,8 @@
-var angular = require('angular');
-var moduleName = 'angular-ui-elements';
-var mod = angular.module(moduleName, [
-    require('./input/directive')
+var angular = require('angular'),
+    moduleName = 'angular-ui-elements';
+
+angular.module(moduleName, [
+    require('./input')
 ]);
 
 module.exports = moduleName;

@@ -7,7 +7,6 @@ var config = {
         'angular-ui-elements': ['webpack/hot/dev-server', './src/index.js']
     },
     externals: {
-        "angular": "angular"
     },
     output: {
         path: path.resolve(__dirname, process.env.NODE_ENV === 'production' ? './dist/' : './build'),
