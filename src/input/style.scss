@@ -288,6 +288,7 @@ textarea::-webkit-scrollbar-thumb
 ////////////////////////////////////////////////////////////////
 
 label {
+  pointer-events: none;
   position: absolute;
   left: 0;
   bottom: $border-height;
@@ -298,7 +299,7 @@ label {
   color: $label-text-color;
   font-weight: normal;
   letter-spacing: 1px;
-cursor: text;
+  cursor: text;
   -webkit-transform: translateY(0) translateZ(0) ;
   transform: translateY(0) translateZ(0);
   @include transition-all;

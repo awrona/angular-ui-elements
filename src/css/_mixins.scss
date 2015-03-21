@@ -1,0 +1,149 @@
+$color: #bdbdbd;
+$color-link: #bdbdbd;
+$color2: #850101;
+$color-h: #fff;
+$color-grey: #555;
+$color-grey-light: #888;
+$color-icon: #333;
+
+
+
+$border-color: rgba(255, 255, 255, .2);
+$background-color: rgba(0, 0, 0, .65);
+$background-header: rgba(0, 0, 0, .75);
+//$background-header-subpage: lighten( $background-header, 12%);
+$background-header-subpage: #1b1b1b;
+$background-button: rgba(0, 0, 0, .65);
+$background-block-link: rgba(0, 0, 0, .5);
+$background-list: #1a1a1a;
+
+
+
+@mixin border {
+  border: 1px solid $border-color;
+}
+
+@mixin non-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin bg-gradient {
+  background-image: -o-linear-gradient(bottom left, rgba(255, 255, 255, .15) 10%, rgba(0, 0, 0, .4) 90%);
+  background-image: -moz-linear-gradient(bottom left, rgba(255, 255, 255, .15) 10%, rgba(0, 0, 0, .4) 90%);
+  background-image: -webkit-linear-gradient(bottom left, rgba(255, 255, 255, .15) 10%, rgba(0, 0, 0, .4) 90%);
+  background-image: -ms-linear-gradient(bottom left, rgba(255, 255, 255, .15) 10%, rgba(0, 0, 0, .4) 90%);
+  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, .15) 10%, rgba(0, 0, 0, .4) 90%);
+}
+
+@mixin shadow-insert {
+  -webkit-box-shadow: inset 0px 0px 0px 2px rgba(0,0,0, 0.8);
+  -moz-box-shadow: inset 0px 0px 0px 2px rgba(0,0,0, 0.8);
+  box-shadow: inset 0px 0px 0px 2px rgba(0,0,0, 0.8);
+}
+
+////////////////////////   mixin flex ///////////////////
+
+@mixin flex-none {
+  -webkit-flex: none;
+  flex: none;
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg-boxflex;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+
+@mixin flex-grow($int: 0) {
+  -webkit-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -moz-flex-grow: $int;
+  -ms-flex-positive: $int;
+  flex-grow: $int;
+}
+@mixin flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -moz-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+@mixin flex-basis($value: auto) {
+  -webkit-flex-basis: $value;
+  -moz-flex-basis: $value;
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
+
+
+@mixin justify-content ($justifyStyle) {
+  -ms-flex-justify: $justifyStyle;
+  -webkit-justify-content: $justifyStyle;
+  justify-content: $justifyStyle;
+}
+
+@mixin flex-direction($direction) {
+  -ms-flex-direction:$direction;
+  -webkit-flex-direction:$direction;
+  flex-direction:$direction;
+}
+@mixin flex-wrap($wrap) {
+  -ms-flex-wrap:$wrap;
+  -webkit-flex-wrap:$wrap;
+  flex-wrap:$wrap;
+}
+@mixin align-content($alignContent) {
+  -ms-flex-align:$alignContent;
+  -webkit-align-items:$alignContent;
+  align-items: $alignContent;
+}
+
+@mixin align-items($align) {
+  -ms-flex-align:$align;
+  -webkit-align-items:$align;
+  align-items: $align;
+}
+
+@mixin align-self($selfAlign) {
+  -ms-flex-align-self: $selfAlign;
+  -webkit-align-self: $selfAlign;
+  align-self: $selfAlign;
+}
+
+@mixin flex-order($order) {
+  -ms-flex-order:$order;
+  -webkit-order:$order;
+  order:$order;
+}
+
+////////////

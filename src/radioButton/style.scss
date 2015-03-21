@@ -1,0 +1,242 @@
+@import "../css/mixins";
+
+
+input {
+  -webkit-appearance: none;
+}
+
+$radio-width: 14px !default;
+$radio-height: $radio-width !default;
+$radio-padding: 3px;
+$radio-border: 2px;
+$radio-border-bottom: 1px;
+
+wow-ui-radio-group {
+  @include flex(1);
+  @include flexbox;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(flex-start);
+  //border: 1px dotted transparent;
+  outline: none;
+
+}
+
+wow-ui-radio-button {
+
+
+  @include flexbox;
+  @include flex-direction(row);
+  @include flex-wrap(nowrap);
+//  border-bottom: $radio-border-bottom solid transparent;
+  //background-color: #222;
+  padding: 1px;
+  margin: 5px;
+
+  white-space: nowrap;
+  cursor: pointer;
+ // height:$radio-width + $radio-padding*2;
+  input {
+    display: none;
+  }
+
+  .wow-ui-container {
+    position: relative;
+   // top: 4px;
+
+    @include bg-gradient;
+    border-radius: 50%;
+    display: inline-block;
+    width: $radio-width + $radio-padding*2;
+    height: $radio-width + $radio-padding*2;
+    cursor: pointer;
+    @include flex-order(2);
+  }
+
+
+  .wow-ui-off {
+    position: absolute;
+    top: $radio-padding;
+    left: $radio-padding;
+    width: $radio-width;
+    height: $radio-width;
+    border: solid $radio-border #000;
+    border-radius: 50%;
+    -moz-transition: border-color ease 0.28s;
+    -webkit-transition: border-color ease 0.28s;
+    -moz-transition: border-color ease 0.28s;
+    transition: border-color ease 0.28s;
+  }
+
+  .wow-ui-on {
+    position: absolute;
+    top: $radio-padding;
+    left: $radio-padding;
+    width: $radio-width;
+    height: $radio-width;
+    border-radius: 50%;
+
+    -ms-transition: transform ease 0.28s;
+    -webkit-transition: transform ease 0.28s;
+    -moz-transition: transform ease 0.28s;
+    transition: transform ease 0.28s;
+
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0);
+  }
+
+  &.wow-ui-checked .wow-ui-on {
+    -ms-transform: scale(0.65);
+    -webkit-transform: scale(0.65);
+    -moz-transform: scale(0.65);
+    transform: scale(0.65);
+    background-color: $color2 !important;
+  }
+
+  .wow-ui-label {
+    @include flex(1);
+    height:$radio-width + $radio-padding*2;
+    line-height:$radio-width + $radio-padding*2;
+    text-indent: 10px;
+    white-space: normal;
+    pointer-events: none;
+    color: #888;
+    @include non-select;
+    @include flex-order(2);
+  }
+
+  .circle {
+    border-radius: 50%;
+  }
+  &:hover {
+//    border-bottom-color: $color2!important;
+  }
+  &:hover .wow-ui-label {
+    color: $color !important;
+  }
+  &.wow-ui-checked .wow-ui-label {
+    color: $color2 !important;
+  }
+}
+
+
+////////////////////////////  li /////////////////////////////////
+
+li {
+  wow-ui-radio-group {
+    @include align-items(stretch);
+    font-size: 11px;
+  }
+  wow-ui-radio-button {
+
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include flex(1, 1, auto);
+    background-color: #222;
+    padding: 1px;
+    margin: 0 1px 1px 0;
+
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+
+    input {
+      display: none;
+    }
+
+    .wow-ui-container {
+      position: absolute;
+      background-color: 333;
+      border-radius: 0;
+      display: inline-block;
+      cursor: pointer;
+      background-image: none;
+      width: 100%;
+      height: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+
+    .wow-ui-off {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      border: none;
+      border-radius: 0;
+      -moz-transition: border-color ease 0.28s;
+      -webkit-transition: border-color ease 0.28s;
+      -moz-transition: border-color ease 0.28s;
+      transition: border-color ease 0.28s;
+    }
+
+    .wow-ui-on {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      border-radius: 0;
+
+      -ms-transition: transform ease 0.28s;
+      -webkit-transition: transform ease 0.28s;
+     -moz-transition: transform ease 0.28s;
+     transition: transform ease 0.28s;
+
+     -ms-transform: scale(0);
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      transform: scale(0);
+    }
+
+    &.wow-ui-checked .wow-ui-on {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      transform: scale(1);
+      background-color: #333 !important;
+    }
+
+    .wow-ui-label {
+      @include flex(1);
+      height:$radio-width + $radio-padding*2;
+      line-height:$radio-width + $radio-padding*2;
+      text-indent: 0;
+      padding: 0 10px;
+      white-space: normal;
+      pointer-events: none;
+      color: #555;
+      @include non-select;
+      @include flex-order(2);
+      text-align: center;
+      z-index: 5;
+    }
+
+    .circle {
+      border-radius: 0;
+    }
+    &:hover {
+      //    border-bottom-color: $color2!important;
+    }
+    &:hover .wow-ui-label {
+      color: $color2 !important;
+    }
+    &.wow-ui-checked .wow-ui-label {
+      color: #999 !important;
+    }
+  }
+}
