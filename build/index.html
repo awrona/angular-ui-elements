@@ -23,35 +23,116 @@
 
 <br/><br/>
 
-<input checked type="checkbox" value="10" style="width: 30px; height: 30px; border: solid 1px"/>
+<h3>Basic usage (single select):</h3>
 
-<br/><br/>
+<select-dropdown
+        ng-model="selectedUser"
+        select-options="user.name for user in users">
+</select-dropdown>
 
-<div class="flex-wrapper">
-    <cre8-select ng-model="selected1" placeholder="Select one..." >
-        <cre8-select-label>Select one</cre8-select-label>
-        <cre8-option ng-value="user" ng-repeat="user in users">{{user.name}}</cre8-option>
-    </cre8-select>
-</div>
+<br/>
+Selected user is: <b>{{ selectedUser.name }}</b><br/>
 
-<div class="flex-wrapper">
-    <cre8-select multiple ng-model="selected2" placeholder="Select multiple..." >
-        <cre8-select-label>Select multiple</cre8-select-label>
-        <cre8-option ng-model="usr" ng-value="user" ng-repeat="user in users">{{user.name}}</cre8-option>
-    </cre8-select>
-</div>
+<h3>Basic usage (multi select):</h3>
+
+<select-dropdown
+        ng-model="selectedUsers"
+        select-options="user.name for user in users"
+        multiselect="true">
+</select-dropdown>
+
+<br/>
+Selected users are: <b ng-repeat="selectedUser in selectedUsers">{{ selectedUser.name }} </b><br/>
+
+<h3>Multiple items with a search box (filter):</h3>
+
+<select-dropdown select-options="user.name for user in users"
+                 ng-model="selectedUsers"
+                 multiselect="true"
+                 search="true">
+</select-dropdown>
+
+<br/>
+Selected users are: <b ng-repeat="selectedUser in selectedUsers">{{ selectedUser.name }} </b><br/>
+
+
+<h3>Grouped elements: <i>only multiselect</i></h3>
+
+<select-dropdown select-options="user.name for user in users group by user.company.name"
+                 search="true"
+                 ng-model="selectedUsers"
+                 multiselect="true">
+</select-dropdown>
+
+<h3>Multiselect with customized labels: <i>only multiselect</i></h3>
+
+<select-dropdown select-options="user.name for user in users"
+                 ng-model="selectedUsers"
+                 multiselect="true"
+                 select-all="true"
+                 search="true"
+                 search-placeholder="TYPE HERE TO SEARCH"
+                 select-all-label="SELECT THEM ALL"
+                 deselect-all-label="DESELECT THEM ALL">
+</select-dropdown>
+
+<h3>Multiselect with hidden controls</h3>
+
+<select-dropdown select-options="user.name for user in users"
+                 ng-model="selectedUsers"
+                 multiselect="true"
+                 select-all="true"
+                 search="true"
+                 hide-controls="true">
+</select-dropdown>
+
+<h3>Multiselect with hidden "no selection" label</h3>
+
+<select-dropdown select-options="user.name for user in users"
+                 ng-model="selectedUser"
+                 search="true"
+                 hide-no-selection="true">
+</select-dropdown>
+
+<h3>Multiselect with ordered items</h3>
+
+<select-dropdown select-options="user.name for user in users order by name"
+                 ng-model="selectedUsers"
+                 multiselect="true">
+</select-dropdown>
+
+<h3>Multiselect track by some property:</h3>
+
+<select-dropdown select-options="user.name for user in users track by user.email order by name"
+                 ng-model="selectedUsers"
+                 multiselect="true">
+</select-dropdown>
+
+<!--<div class="flex-wrapper">-->
+    <!--<cre8-select ng-model="selected1" placeholder="Select one..." >-->
+        <!--<cre8-select-label>Select one</cre8-select-label>-->
+        <!--<cre8-option ng-value="user" ng-repeat="user in users">{{user.name}}</cre8-option>-->
+    <!--</cre8-select>-->
+<!--</div>-->
+
+<!--<div class="flex-wrapper">-->
+    <!--<cre8-select multiple ng-model="selected2" placeholder="Select multiple..." >-->
+        <!--<cre8-select-label>Select multiple</cre8-select-label>-->
+        <!--<cre8-option ng-model="usr" ng-value="user" ng-repeat="user in users">{{user.name}}</cre8-option>-->
+    <!--</cre8-select>-->
+<!--</div>-->
 
 
 
-<code style="color: #f8f8ff;">Selected value:
-    <pre>{{ selected1 | json }}</pre>
-</code>
+<!--<code style="color: #f8f8ff;">Selected value:-->
+    <!--<pre>{{ selected1 | json }}</pre>-->
+<!--</code>-->
 
-<br/><br/>
+<!--<br/><br/>-->
 
-<code style="color: #f8f8ff;">Selected values:
-    <pre>{{ selected2 | json }}</pre>
-</code>
+<!--<code style="color: #f8f8ff;">Selected values:-->
+    <!--<pre>{{ selected2 | json }}</pre>-->
+<!--</code>-->
 
 
 </body>

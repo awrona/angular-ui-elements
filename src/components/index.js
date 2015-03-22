@@ -6,7 +6,8 @@ angular.module(moduleName, [
     require('./checkbox'),
     require('./input'),
     require('./radioButton'),
-    require('./select')
+    require('./select'),
+    require('./select-dropdown')
 ]);
 
 module.exports = moduleName;

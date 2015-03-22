@@ -33,7 +33,7 @@ var config = {
                 "includePaths[]=" +
                 (path.resolve(__dirname, "./build/bower_components")) + "&" +
                 "includePaths[]=" +
-                (path.resolve(__dirname, "./node_modules")) +
+                (path.resolve(__dirname, "./node_modules")) + "&" +
                 "includePaths[]=" +
                 (path.resolve(__dirname, "./src/css"))
             }

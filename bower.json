@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "homepage": "https://github.com/awrona/angular-ui-elements",
   "authors": [
-    "Agnieszka Wrona @agawrona"
+    "Agnieszka Wrona @agawrona",
+    "Bogumil Wrona @bwrona"
   ],
   "description": "Angular UI Elements",
   "main": "dist/angular-ui-elements.js",
@@ -26,5 +27,6 @@
     "tests"
   ],
   "devDependencies": {
+    "angular-select-dropdown": "*"
   }
 }
