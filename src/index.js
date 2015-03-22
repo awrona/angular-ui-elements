@@ -1,11 +1,3 @@
-var angular = require('angular'),
-    moduleName = 'angular-ui-elements';
+"use strict";
 
-angular.module(moduleName, [
-    require('./button'),
-    require('./checkbox'),
-    require('./input'),
-    require('./radioButton')
-]);
-
-module.exports = moduleName;
+module.exports = require('./components');
