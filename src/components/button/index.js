@@ -6,7 +6,7 @@ var ngModule = angular.module(ngModuleName, []);
 
 module.exports = ngModuleName;
 
-ngModule.directive('wowUiButton', Directive);
+ngModule.directive('cre8Button', Directive);
 
 
 function Directive() {
@@ -24,8 +24,8 @@ function Directive() {
 
     function getTemplate(element, attr) {
         return isAnchor(attr) ?
-            '<a class="wow-ui-button" ng-transclude></a>' :
-            '<button class="wow-ui-button" ng-transclude></button>';
+            '<a class="cre8-button" ng-transclude></a>' :
+            '<button class="cre8-button" ng-transclude></button>';
     }
 
     function postLink(scope, element, attr) {

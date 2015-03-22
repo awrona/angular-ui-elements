@@ -1,8 +1,5 @@
-body, html {
-  background-color: #000;
-  font-family: Verdana, sans-serifervetica;
-  font-size: 14px;
-}
+@import "../css/mixins";
+
 cre8-input-wrapper textarea,
 cre8-input-wrapper input{
   box-sizing:content-box;
@@ -24,139 +21,17 @@ $border-label-color-text: #666;
 
 $input-text-color: #ccc;
 $input-font-size: 12px;
-///////////////////////////////////////
-
-@mixin flex-none {
-  -webkit-flex: none;
-  flex: none;
-}
-
-@mixin flexbox() {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-//@mixin flex($values) {
-//  -webkit-box-flex: $values;
-//  -moz-box-flex:  $values;
-//  -webkit-flex:  $values;
-//  -ms-flex:  $values;
-//  flex:  $values;
-//}
-
-@mixin flex($fg: 1, $fs: null, $fb: null) {
-  // Set a variable to be used by box-flex properties
-  $fg-boxflex: $fg;
-  // Box-Flex only supports a flex-grow value so let's grab the
-  // first item in the list and just return that.
-  @if type-of($fg) == 'list' {
-    $fg-boxflex: nth($fg, 1);
-  }
-  -webkit-box-flex: $fg-boxflex;
-  -webkit-flex: $fg $fs $fb;
-  -moz-box-flex: $fg-boxflex;
-  -moz-flex: $fg $fs $fb;
-  -ms-flex: $fg $fs $fb;
-  flex: $fg $fs $fb;
-}
 
 
-@mixin flex-grow($int: 0) {
-  -webkit-box-flex: $int;
-  -webkit-flex-grow: $int;
-  -moz-flex-grow: $int;
-  -ms-flex-positive: $int;
-  flex-grow: $int;
-}
-@mixin flex-shrink($int: 1) {
-  -webkit-flex-shrink: $int;
-  -moz-flex-shrink: $int;
-  -ms-flex-negative: $int;
-  flex-shrink: $int;
-}
-@mixin flex-basis($value: auto) {
-  -webkit-flex-basis: $value;
-  -moz-flex-basis: $value;
-  -ms-flex-preferred-size: $value;
-  flex-basis: $value;
-}
-
-
-@mixin justify-content ($justifyStyle) {
-  -ms-flex-justify: $justifyStyle;
-  -webkit-justify-content: $justifyStyle;
-  justify-content: $justifyStyle;
-}
-
-@mixin flex-direction($direction) {
-  -ms-flex-direction:$direction;
-  -webkit-flex-direction:$direction;
-  flex-direction:$direction;
-}
-@mixin flex-wrap($wrap) {
-  -ms-flex-wrap:$wrap;
-  -webkit-flex-wrap:$wrap;
-  flex-wrap:$wrap;
-}
-@mixin align-content($alignContent) {
-  -ms-flex-align:$alignContent;
-  -webkit-align-items:$alignContent;
-  align-items: $alignContent;
-}
-
-@mixin align-items($align) {
-  -ms-flex-align:$align;
-  -webkit-align-items:$align;
-  align-items: $align;
-}
-
-@mixin align-self($selfAlign) {
-  -ms-flex-align-self: $selfAlign;
-  -webkit-align-self: $selfAlign;
-  align-self: $selfAlign;
-}
-
-@mixin flex-order($order) {
-  -ms-flex-order:$order;
-  -webkit-order:$order;
-  order:$order;
-}
-
-///////////////////////////////////////////////
-
-@mixin transition-all() {
-  -webkit-transition: all;
-  -moz-transition: all;
-  -o-transition: all;
-  transition: all;
-}
-
-///////////////////////////////////////////////
-
-.flex-wrapper {
-  @include flexbox;
-  @include flex-direction(column);
-  @include align-content(center);
-  @include align-items(stretch);
-  @include justify-content(center);
-//  background-color: #222;
-  margin: 20px 0;
-  padding: 20px 0;
-  width: 50%;
-}
 
 
 //////////////////////////////////////////////
 
-input::-moz-focus-inner {
+cre8-input-wrapper input::-moz-focus-inner {
   border: 0;
 }
-object, embed {
-  outline: 0;
-}
-input:focus, textarea:focus {
+
+cre8-input-wrapper input:focus, cre8-input-wrapper textarea:focus {
   outline: 0;
 }
 
@@ -164,23 +39,14 @@ cre8-input-wrapper {
   @include flex(1);
   @include flexbox;
   @include flex-direction(column);
-//  @include align-content(center);
-//  @include align-items(stretch);
- // @include justify-content(center);
- // background-color: #333;
   position: relative;
   min-height: $input-height + $border-height;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
-
-
 }
 
-
-
-
-input {
+cre8-input-wrapper input {
   color: $input-text-color;
   text-indent: 10px;
   font-size: $input-font-size;
@@ -205,14 +71,13 @@ input {
   -webkit-transition-delay: .5s; /* Safari */
   transition-delay: .5s;
 }
-//cre8-input-wrapper label:hover + input,
 cre8-input-wrapper.cre8-input-focused input,
 cre8-input-wrapper.cre8-input-has-value input {
   border-bottom-width: $border-height;
   -webkit-transition-delay: 0s; /* Safari */
   transition-delay: 0s;
 }
-textarea {
+cre8-input-wrapper textarea {
   color: $input-text-color;
   font-size: $input-font-size;
   text-indent: 10px;
@@ -236,9 +101,6 @@ textarea {
   -webkit-transition-delay: .5s; /* Safari */
   transition-delay: .5s;
 }
-
-
-
 
 cre8-input-wrapper label:hover + textarea{
   border-bottom-width: $border-height;
@@ -264,18 +126,20 @@ cre8-input-wrapper.cre8-input-has-value textarea {
   transition-delay: 0s;
 }
 //////////////////////////////////////   scroll   //////////////////
-textarea::-webkit-scrollbar-track
+
+
+cre8-input-wrapper textarea::-webkit-scrollbar-track
 {
   background-color: #000;
 }
 
-textarea::-webkit-scrollbar
+cre8-input-wrapper textarea::-webkit-scrollbar
 {
   width: 6px;
   margin: 0 2px;
 }
 
-textarea::-webkit-scrollbar-thumb
+cre8-input-wrapper textarea::-webkit-scrollbar-thumb
 {
   background-color: $border-color;
   border: none;
@@ -287,7 +151,7 @@ textarea::-webkit-scrollbar-thumb
 }
 ////////////////////////////////////////////////////////////////
 
-label {
+cre8-input-wrapper label {
   pointer-events: none;
   position: absolute;
   left: 0;
@@ -312,12 +176,9 @@ label {
   transition-delay: .5s;
 }
 
-
-//cre8-input-wrapper label:hover,
 cre8-input-wrapper.cre8-input-focused label,
 cre8-input-wrapper.cre8-input-has-value label
  {
- // top: ($input-height) ;
   bottom: 0px;
   height: $border-height;
   line-height: $border-height;
@@ -327,7 +188,6 @@ cre8-input-wrapper.cre8-input-has-value label
   font-weight: normal;
   -webkit-transition-delay: 0s; /* Safari */
   transition-delay: 0s;
-
 }
 
 
