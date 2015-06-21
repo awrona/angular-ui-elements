@@ -9,7 +9,7 @@ module.exports = ngModuleName;
 ngModule.directive('cre8InputWrapper', function() {
     return {
         restrict: 'E',
-        controller: ctrl
+        controller: ['$scope', '$element', '$attrs', ctrl]
     };
 
     function ctrl($scope, $element, $attrs) {
