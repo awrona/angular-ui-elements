@@ -17,7 +17,16 @@
     "AngularJS",
     "UI"
   ],
-  "author": "Agnieszka Wrona @agawrona",
+  "author": {
+    "name": "Agnieszka Wrona",
+    "url": "https://twitter.com/agawrona"
+  },
+  "contributors": [
+    {
+      "name": "Bogumil Wrona",
+      "url": "https://twitter.com/bwrona"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/awrona/angular-ui-elements/issues"
