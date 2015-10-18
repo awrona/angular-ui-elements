@@ -71,6 +71,8 @@ wow-ui-checkbox:hover .wow-ui-checkbox-label
   color: $color2 !important;
 }
 
+
+
 ////////////////////////////  li ////////////////////////////
 
 $checkbox-li-height: 22px;
@@ -90,7 +92,7 @@ li wow-ui-checkbox {
   position: relative;
   padding: 0px;
   margin: 0 1px 1px 0;
-
+  background-color: #222;
   &:last-child {
   margin-right: 0;
 }
@@ -104,6 +106,7 @@ li wow-ui-checkbox {
      top: 0;
      left: 0;
      z-index: 0;
+
     }
 
   .wow-ui-checkbox-icon {
@@ -118,11 +121,19 @@ li wow-ui-checkbox {
     left: 0;
     right: 0;
     z-index: 1;
+
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0);
+    -ms-transition: transform ease 0.28s;
+    -webkit-transition: transform ease 0.28s;
+    -moz-transition: transform ease 0.28s;
+    transition: transform ease 0.28s;
   }
 
   .wow-ui-checkbox-label {
     @include flex(1);
-
     width: 100%;
     font-size: 11px;
     font-weight: normal;
@@ -135,11 +146,14 @@ li wow-ui-checkbox {
     cursor: pointer;
     z-index: 10;
     @include non-select;
+
+
+
   }
 }
 
 li wow-ui-checkbox:hover{
-  //  border-bottom-color: $color2!important;
+
 }
 
 li wow-ui-checkbox:hover .wow-ui-checkbox-container,
@@ -150,7 +164,15 @@ li wow-ui-checkbox:hover .wow-ui-checkbox-label
 //////////////////////////////////////////////////////////
 li .wow-ui-checked .wow-ui-checkbox-icon {
   background-color: #333!important;
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+
 }
 li .wow-ui-checked .wow-ui-checkbox-label {
+  color: #ccc !important;
+}
+li .wow-ui-checked .wow-ui-checkbox-container {
   color: #ccc !important;
 }

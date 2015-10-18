@@ -28,14 +28,11 @@ wow-ui-radio-button {
   @include flexbox;
   @include flex-direction(row);
   @include flex-wrap(nowrap);
-//  border-bottom: $radio-border-bottom solid transparent;
-  //background-color: #222;
   padding: 1px;
   margin: 5px;
 
   white-space: nowrap;
   cursor: pointer;
- // height:$radio-width + $radio-padding*2;
   input {
     display: none;
   }
@@ -111,7 +108,7 @@ wow-ui-radio-button {
     border-radius: 50%;
   }
   &:hover {
-//    border-bottom-color: $color2!important;
+
   }
   &:hover .wow-ui-label {
     color: $color !important;
@@ -192,15 +189,15 @@ li {
       z-index: 3;
       border-radius: 0;
 
-      -ms-transition: transform ease 0.28s;
-      -webkit-transition: transform ease 0.28s;
-     -moz-transition: transform ease 0.28s;
-     transition: transform ease 0.28s;
-
      -ms-transform: scale(0);
       -webkit-transform: scale(0);
       -moz-transform: scale(0);
       transform: scale(0);
+
+      -ms-transition: transform ease 0.28s;
+      -webkit-transition: transform ease 0.28s;
+      -moz-transition: transform ease 0.28s;
+      transition: transform ease 0.28s;
     }
 
     &.wow-ui-checked .wow-ui-on {

@@ -64,18 +64,16 @@ cre8-input-wrapper input {
 
   -webkit-transition-property: border-bottom-width;
   transition-property: border;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  -webkit-transition-delay: .5s; /* Safari */
-  transition-delay: .5s;
+
 }
 cre8-input-wrapper.cre8-input-focused input,
 cre8-input-wrapper.cre8-input-has-value input {
   border-bottom-width: $border-height;
-  -webkit-transition-delay: 0s; /* Safari */
-  transition-delay: 0s;
+
 }
 cre8-input-wrapper textarea {
   color: $input-text-color;
@@ -94,25 +92,22 @@ cre8-input-wrapper textarea {
 
   -webkit-transition-property: border-bottom-width, height;
   transition-property: border-bottom-width, height;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  -webkit-transition-delay: .5s; /* Safari */
-  transition-delay: .5s;
+
 }
 
 cre8-input-wrapper label:hover + textarea{
   border-bottom-width: $border-height;
-  -webkit-transition-delay: 0s; /* Safari */
-  transition-delay: 0s;
+
 }
 cre8-input-wrapper:hover textarea {
   background-color: #111;
 
   color: $input-text-color;
-  -webkit-transition-delay: 0s; /* Safari */
-  transition-delay: 0s;
+
 }
 
 cre8-input-wrapper.cre8-input-focused textarea,
@@ -122,8 +117,7 @@ cre8-input-wrapper.cre8-input-has-value textarea {
   padding: 10px 10px;
   background-color: #111;
   color: $input-text-color;
-  -webkit-transition-delay: 0s; /* Safari */
-  transition-delay: 0s;
+
 }
 //////////////////////////////////////   scroll   //////////////////
 
@@ -172,8 +166,7 @@ cre8-input-wrapper label {
   transition-duration: 0.5s;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  -webkit-transition-delay: .5s; /* Safari */
-  transition-delay: .5s;
+
 }
 
 cre8-input-wrapper.cre8-input-focused label,
@@ -186,8 +179,7 @@ cre8-input-wrapper.cre8-input-has-value label
   text-indent: 10px;
   color: $border-label-color-text;
   font-weight: normal;
-  -webkit-transition-delay: 0s; /* Safari */
-  transition-delay: 0s;
+
 }
 
 
